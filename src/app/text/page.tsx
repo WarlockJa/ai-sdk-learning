@@ -6,7 +6,7 @@ export const runtime = "edge";
 
 export default function TextGeneration() {
   return (
-    <main className="prose dark:prose-invert m-auto min-h-screen w-screen max-w-5xl p-12 outline outline-red-500">
+    <main className="prose dark:prose-invert m-auto min-h-screen w-screen max-w-5xl p-12">
       <ViewTransition name="navcard-title-/text">
         <h1>AI Text Generation</h1>
       </ViewTransition>
