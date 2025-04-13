@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Message, continueConversation } from "./actions";
 import { readStreamableValue } from "ai/rsc";
 
@@ -10,10 +10,84 @@ export const maxDuration = 30;
 export default function ChatForm() {
   const [conversation, setConversation] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");
+  const divRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="h-[78vh] overflow-y-scroll">
+    <div className="h-[78vh] overflow-y-scroll" ref={divRef}>
       <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
+        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
+        delectus!
         {conversation.map((message, index) => (
           <div key={index}>
             {message.role}: {message.content}
@@ -24,6 +98,7 @@ export default function ChatForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          setConversation([...conversation, { role: "user", content: input }]);
           setInput("");
         }}
         className="fixed inset-x-0 bottom-0 mx-auto flex w-screen max-w-4xl gap-2 p-4"
@@ -55,10 +130,22 @@ export default function ChatForm() {
                 ...messages,
                 { role: "assistant", content: textContent },
               ]);
+
+              divRef.current?.scrollTo({ top: divRef.current.scrollHeight });
             }
           }}
         >
           Send Message
+        </button>
+
+        <button
+          type="button"
+          onClick={() =>
+            divRef.current?.scrollTo({ top: divRef.current.scrollHeight })
+          }
+          className="rounded-2xl border p-2"
+        >
+          TEST
         </button>
       </form>
     </div>

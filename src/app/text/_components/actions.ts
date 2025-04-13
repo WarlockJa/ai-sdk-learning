@@ -52,6 +52,7 @@ export async function continueConversation(history: Message[]) {
 
       try {
         const data = JSON.parse(chunk.slice(6)).response;
+        console.log("DATA: ", data);
         stream.update(data);
       } catch (error) {
         console.log("ERR CHUNK: ", chunk.slice(6), error);
