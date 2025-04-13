@@ -39,6 +39,7 @@ export async function continueConversation(history: Message[]) {
 
   // creating async IIFE to populate stream response
   (async () => {
+    let chunk = "";
     while (true) {
       const { done, value } = await reader.read();
 
@@ -48,16 +49,13 @@ export async function continueConversation(history: Message[]) {
         break;
       }
 
-      const chunk = decoder.decode(value);
-      console.log("CHUNK: ", chunk);
-
+      chunk += decoder.decode(value);
       try {
         const data = JSON.parse(chunk.slice(6)).response;
-        console.log("DATA: ", data);
+        // console.log("DATA: ", data);
+        chunk = "";
         stream.update(data);
-      } catch (error) {
-        console.log("ERR CHUNK: ", chunk.slice(6), error);
-      }
+      } catch {}
     }
   })();
 
