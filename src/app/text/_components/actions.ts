@@ -49,6 +49,7 @@ export async function continueConversation(history: Message[]) {
       }
 
       const chunk = decoder.decode(value);
+      console.log("CHUNK: ", chunk);
 
       try {
         const data = JSON.parse(chunk.slice(6)).response;

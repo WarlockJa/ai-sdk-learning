@@ -15,79 +15,6 @@ export default function ChatForm() {
   return (
     <div className="h-[78vh] overflow-y-scroll" ref={divRef}>
       <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-        quibusdam, eligendi sit ab amet facere explicabo, numquam iste dolorum
-        laborum iure iusto blanditiis cupiditate corrupti at fuga deleniti cum
-        delectus!
         {conversation.map((message, index) => (
           <div key={index}>
             {message.role}: {message.content}
@@ -136,16 +63,6 @@ export default function ChatForm() {
           }}
         >
           Send Message
-        </button>
-
-        <button
-          type="button"
-          onClick={() =>
-            divRef.current?.scrollTo({ top: divRef.current.scrollHeight })
-          }
-          className="rounded-2xl border p-2"
-        >
-          TEST
         </button>
       </form>
     </div>
