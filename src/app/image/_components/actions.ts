@@ -2,12 +2,7 @@
 
 import { createStreamableValue } from "ai/rsc";
 
-export interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
-
-export async function continueConversation(history: Message[]) {
+export async function imageGenerationAction(prompt: string) {
   "use server";
 
   const response = await fetch(
