@@ -3,19 +3,20 @@
 import { createStreamableValue } from "ai/rsc";
 
 export async function imageGenerationAction(prompt: string) {
-  "use server";
+  const body = new FormData();
+  body.append("prompt", prompt);
+  // if (image) body.append("image", image);
+  // if (mask) body.append("mask", mask);
+  // if (width) body.append("width", width.toString());
+  // if (height) body.append("height", height.toString());
 
-  const response = await fetch(
-    "https://text-generation-worker.warlockja.workers.dev",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-access-key": process.env.ACCESS_KEY as string,
-      },
-      body: JSON.stringify({ messages: history }),
+  const response = await fetch(process.env.IMAGE_GENERATE_WORKER_URL!, {
+    method: "POST",
+    headers: {
+      "x-access-key": process.env.IGW_ACCESS_KEY!,
     },
-  );
+    body,
+  });
 
   if (!response.ok) {
     const errorData = await response.json();
@@ -30,11 +31,9 @@ export async function imageGenerationAction(prompt: string) {
 
   const stream = createStreamableValue();
   const reader = response.body.getReader();
-  const decoder = new TextDecoder();
 
   // creating async IIFE to populate stream response
   (async () => {
-    let chunk = "";
     while (true) {
       const { done, value } = await reader.read();
 
@@ -44,17 +43,9 @@ export async function imageGenerationAction(prompt: string) {
         break;
       }
 
-      chunk += decoder.decode(value);
-      try {
-        const data = JSON.parse(chunk.slice(6)).response;
-        chunk = "";
-        stream.update(data);
-      } catch {}
+      stream.update(value);
     }
   })();
 
-  return {
-    messages: history,
-    newMessage: stream.value,
-  };
+  return stream.value;
 }
