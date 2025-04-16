@@ -4,16 +4,11 @@ export const runtime = "edge";
 
 export default function Home() {
   return (
-    <main className="prose dark:prose-invert m-auto min-h-screen w-screen max-w-5xl p-12 outline outline-red-500">
+    <main className="prose dark:prose-invert m-auto min-h-screen w-screen max-w-5xl p-12">
       <h1>AI SDK testing suite</h1>
-      <ul>
+      <ul className="flex flex-col gap-2">
         {ITEMS.map((item) => (
-          <NavCard key={item.href} {...item}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-            asperiores laboriosam quam dolorem! Distinctio odit debitis
-            aspernatur numquam aliquam, alias sed repudiandae fugit aliquid quas
-            aut maiores. Mollitia, itaque tempore?
-          </NavCard>
+          <NavCard key={item.href} {...item} />
         ))}
       </ul>
     </main>

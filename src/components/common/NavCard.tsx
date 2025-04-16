@@ -15,7 +15,7 @@ export default function NavCard({
   href,
 }: NavCard & { children?: ReactNode }) {
   return (
-    <Link href={href}>
+    <Link href={href} className="rounded-2xl transition-shadow hover:shadow">
       <Card>
         <CardHeader>
           <ViewTransition name={`navcard-title-${href}`}>
