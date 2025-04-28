@@ -8,8 +8,6 @@ export interface Message {
 }
 
 export async function continueConversation(history: Message[]) {
-  "use server";
-
   const response = await fetch(
     "https://text-generation-worker.warlockja.workers.dev",
     {
@@ -51,7 +49,14 @@ export async function continueConversation(history: Message[]) {
 
       chunk += decoder.decode(value);
       try {
-        const data = JSON.parse(chunk.slice(6)).response;
+        const data = chunk
+          .split("data: ")
+          .reduce(
+            (res, cur) =>
+              cur.length > 0 ? (res += JSON.parse(cur).response) : res,
+            "",
+          );
+
         chunk = "";
         stream.update(data);
       } catch {}
